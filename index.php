@@ -235,7 +235,7 @@
    </div>
 
    <script>   
-     var m = "<div class='chess_pieces' draggable='true'>Pi</div>";
+   //  var m = "<div class='chess_pieces' draggable='true'>Pi</div>";
      var chess_pieces = <?php echo json_encode($chess_pieces); ?>;
      var rules = <?php echo json_encode($rules); ?>;
     // console.log("chess_pieces",chess_pieces);
@@ -333,10 +333,32 @@
          var allow_mv = false,allow_dir = false,allwd_step = 0;
          (piece_status.init_pos == piece_status.last_pos_b) ? allwd_step = rules[piece_status.piece_type].init_step : allwd_step = rules[piece_status.piece_type].step; 
         
+        var curr_present_ele =  document.getElementById(piece_status.curr_pos_b).children[0];
+        var over_lay = false;
+        var same_team = true;
+        if(curr_present_ele !== undefined){
+            var curr_piece_team = curr_present_ele.getAttribute('piece_team');
+            if( piece_status.piece_team ==  curr_piece_team)
+            {
+                over_lay = true;
+            }else
+            {
+                same_team = false;
+            }
+        }
+
         // [direction]->[1->vertical],[2->horizontal],[3->diagonal],[4->vertical_horizontal],[5->vertical_diagonal][6->l_movement][7->all]
 
         // breaked if into multiple parts
-        if(( rules[piece_status.piece_type].direction == getPieceMovement.direction || (rules[piece_status.piece_type].direction == 7) &&  getPieceMovement.direction != 6))
+        //if(getPieceMovement.d)
+        //console.log(piece_status.piece_type);
+        //console.log(same_team);
+        
+        if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 3 &&  (curr_present_ele == undefined ||  same_team)  )
+        {
+            allow_dir = false;
+        }
+        else if(( rules[piece_status.piece_type].direction == getPieceMovement.direction || (rules[piece_status.piece_type].direction == 7) &&  getPieceMovement.direction != 6))
         {
             allow_dir = true;
         }
@@ -361,10 +383,9 @@
           allow_mv = true;
         }
 
-        console.log(m);
-
+       
          
-        if((allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir )
+        if((allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir && !over_lay )
         {
             return true;
         }else{

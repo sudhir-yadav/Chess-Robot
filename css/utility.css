@@ -1,0 +1,85 @@
+*{padding:0;margin:0;}
+
+body,html{font-family:"Source Sans Pro";}
+
+.bg-color-orange{background: rgb(233, 147, 26);}
+.bg-color-orange-drk1{background: rgb(208, 101, 3);}
+.bg-color-lightblue{background: rgb(22, 145, 190);}
+.bg-color-blue{background: rgb(22, 107, 162);}
+.bg-color-blc-blu1{background: rgb(27, 54, 71);}
+.bg-color-blc-blu2{background: rgb(21, 40, 54);}
+.bg-color-blc-blu3{background:rgb(54, 73, 86);}
+
+
+.color-white{color:#fff;}
+
+.float_left{ flaot:left; }
+.float_right{ flaot:right; }
+.ele-center{margin:auto !important;}
+
+.pos_rel{position:relative;}
+.pos_abs{position:absolute;}
+.pos_stc{position: static;}
+.pos_fxd{position: fixed;}
+
+.txt_center{text-align:center;}
+.txt_left{text-align:left;}
+.txt_right{text-align:right;}
+
+.area-lg-h,.area-lg-1,.area-lg-1h,.area-lg-2,.area-lg-2h,.area-lg-3,.area-lg-3h,.area-lg-4,.area-lg-4h,.area-lg-5,.area-lg-5h,.area-lg-6,.area-lg-6h,.area-lg-7,.area-lg-7h,.area-lg-8,.area-lg-8h,.area-lg-9,.area-lg-9h,.area-lg-10
+{position:relative;}
+.area-xs-h,.area-xs-1,.area-xs-1h,.area-xs-2,.area-xs-2h,.area-xs-3,.area-xs-3h,.area-xs-4,.area-xs-4h,.area-xs-5,.area-xs-5h,.area-xs-6,.area-xs-6h,.area-xs-7,.area-xs-7h,.area-xs-8,.area-xs-8h,.area-xs-9,.area-xs-9h,.area-xs-10
+{position:relative;}
+
+.height_full{height:100%;}
+
+.border_r50{border-radius:50%;}
+
+@media (min-width: 1200px) {
+.area-lg-h{width:5%;}
+.area-lg-1{width:10%;}
+.area-lg-1h{width:15%;}
+.area-lg-2{width:20%;}
+.area-lg-2h{width:25%;}
+.area-lg-3{width:30%;}
+.area-lg-3h{width:35%;}
+.area-lg-4{width:40%;}
+.area-lg-4h{width:45%;}
+.area-lg-5{width:50%;}
+.area-lg-5h{width:55%;}
+.area-lg-6{width:60%;}
+.area-lg-6h{width:65%;}
+.area-lg-7{width:70%;}
+.area-lg-7h{width:75%;}
+.area-lg-8{width:80%;}
+.area-lg-8h{width:85%;}
+.area-lg-9{width:90%;}
+.area-lg-9h{width:95%;}
+.area-lg-10{width:100%;}
+
+}
+
+/*@media (max-width: 100px and max-width: 480px ) {*/
+@media only screen and (max-width: 480px) {	
+.area-xs-h{width:5%;}
+.area-xs-1{width:10%;}
+.area-xs-1h{width:15%;}
+.area-xs-2{width:20%;}
+.area-xs-2h{width:25%;}
+.area-xs-3{width:30%;}
+.area-xs-3h{width:35%;}
+.area-xs-4{width:40%;}
+.area-xs-4h{width:45%;}
+.area-xs-5{width:50%;}
+.area-xs-5h{width:55%;}
+.area-xs-6{width:60%;}
+.area-xs-6h{width:65%;}
+.area-xs-7{width:70%;}
+.area-xs-7h{width:75%;}
+.area-xs-8{width:80%;}
+.area-xs-8h{width:85%;}
+.area-xs-9{width:90%;}
+.area-xs-9h{width:95%;}
+.area-xs-10{width:100%;}
+
+}

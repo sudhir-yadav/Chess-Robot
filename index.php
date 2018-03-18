@@ -358,6 +358,10 @@
         {
             allow_dir = false;
         }
+        else if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 1 &&  !same_team )
+         {
+             allow_dir = false;
+         }
         else if(( rules[piece_status.piece_type].direction == getPieceMovement.direction || (rules[piece_status.piece_type].direction == 7) &&  getPieceMovement.direction != 6))
         {
             allow_dir = true;

@@ -1,0 +1,251 @@
+
+body
+{
+	background:#FDFDFF;
+}
+html,body
+{
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+}
+.nav_header
+{
+  width:100%;
+  color:#fff;
+  height:50px;
+  line-height:50px;
+  z-index:2;
+  position:fixed;
+    top:0;
+  /*border-bottom: 1px solid rgba(207, 207, 207, 0.64);*/
+}
+.elec_logo
+{
+  width:20%;
+  float:left;
+}
+.side_menu_bar
+{
+/*background:rgb(87, 87, 87);*/
+float: left;
+min-width: 76px;
+/*width:57px;*/
+/*padding:10px;*/
+height: 100%;
+position: fixed;
+top: 0;
+z-index:1;
+padding-top:50px;
+color:#fff;
+/*overflow-y: auto;*/
+}
+.sbar_sub_menu
+{
+  width:230px;height:100%;top:0;left:76px;background:#fff;color:#dadada;position:absolute;z-index:30;border-right: 1px solid #DADADA;
+box-shadow: 0px 8px 30px -6px rgba(0, 0, 0, 0.065);
+}
+.side_menu_bar_wrapper
+{
+  position:relative;overflow-y: auto;height:100%;
+}
+.sbar_submenu_list
+{
+  list-style: none;
+ // padding: 15px;
+}
+
+.sbar_submenu_list li
+{
+  padding: 18px;
+  /*color: rgb(111, 111, 111); */
+  color: rgb(160, 160, 160);
+  font-size: 12px;
+  border-bottom: 1px solid #ECECEC;
+  font-weight: 500;
+  font-family: sans-serif;
+  display: block;
+ // font-weight:800;
+}
+
+.project_body
+{
+	height:100%;
+	width:100%;
+}
+.body_usable
+{
+	padding-left:77px;
+    position:relative;
+    padding-top:50px;
+}
+.side_menu_bar a
+{
+	display: block;
+	/*width: 100%;*/
+	text-align: center;
+	/*padding:15px 0 15px 0;*/
+  padding:12px;
+    text-decoration:none;
+    position:relative;
+    border-bottom:0.08em solid rgba(3, 3, 3, 0.08);
+    cursor:pointer;
+      color: rgba(255, 255, 255, 0.65);
+    /*color:rgba(117, 120, 123, 1);*/
+}
+
+.side_menu_bar a h1
+{
+	font-size:23px;
+	margin-bottom:2px;
+}
+/*.side_menu_bar a small
+{
+	font-family: sans-serif;
+	font-size:13px;
+}*/
+
+.side_menu_bar a small {
+  /* font-family: sans-serif; */
+  font-size: 13px;
+  width: 46px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.side_menu_bar a[class=active]
+{
+ /* color:#51ACE4;*/
+  /*border-left: solid 4px rgb(81, 172, 228);*/
+/*
+  -webkit-box-shadow: inset 0px 0px 88px -17px rgba(0,0,0,0.55);
+-moz-box-shadow: inset 0px 0px 88px -17px rgba(0,0,0,0.55);
+box-shadow: inset 0px 0px 88px -17px rgba(0,0,0,0.55);
+*/
+
+  color: #F9F9F9;
+  background: rgba(255,255,255,0.2);
+}
+
+.side_menu_bar a[class=active]:after {
+  border: 3px solid #red;
+  content: "";
+  position: absolute;
+  left: 89%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 13px solid rgba(255, 255, 255, 1);
+  border-bottom: 13px solid transparent;
+}
+
+.side_menu_bar a:hover {
+  /*color: #F9F9F9;*/
+  background: rgba(255,255,255,0.08);
+}
+
+.db_card
+{
+	margin: 10px;
+  position:relative;
+ background: #fff;
+ float:left;
+ height:80px;
+   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.2);
+ border-radius:2px;
+/*padding: 15px*/
+}
+
+.db_card .icon-bock i
+{
+  line-height: 80px;
+  font-size:35px;
+}
+
+.user_display
+{
+float: right;
+margin-right: 20px;
+padding:0 27px 0 27px;
+height:50px;
+line-height:50px;
+/*padding: 16px 25px 16px 25px;*/
+/* border-right: solid 1px; */
+/* border-left: solid 1px; */
+/* height: 100%; */
+/*font-family: sans-serif;*/
+background: rgba(0,0,0,0.08);
+position: relative;
+}
+
+.user_basic_access {
+position: absolute;
+top: 98%;
+width: 185px;
+left: -51px;
+/*padding: 0 10px 10px 10px;*/
+background-color: #fff;
+color: #000;
+border: 1px solid #E8E8E8;
+border-top:none;
+-webkit-box-shadow: 0px 8px 30px -6px rgba(0,0,0,0.13);
+-moz-box-shadow: 0px 8px 30px -6px rgba(0,0,0,0.13);
+box-shadow: 0px 8px 30px -6px rgba(0,0,0,0.13);
+overflow:hidden;
+border-radius: 0 0 5px 5px;
+}
+.user_basic_access span
+{
+	padding: 12px;
+display: block;
+width:auto;
+color: #a3aaae;
+font-size: 13px;
+border-top:1px solid #efefef;
+line-height:20px;
+}
+
+.user_basic_ac_header
+{
+	color: #929292;
+font-size: 18px;
+/*font-family: sans-serif;*/
+font-weight: 100;
+padding: 10px 0 10px 10px;
+/* margin: 10px; */
+/*border-bottom: 1px solid #dadada;*/
+border-bottom:1px solid #E6E6E6;
+background: #fff;
+margin-bottom:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.user_basic_ac_header h1,h2,h3
+{
+  font-size: 27px;
+  font-weight:200;
+  margin-bottom:-6px;
+}
+
+.pr_base_blue
+{
+  background:rgb(56, 162, 228);
+}
+
+.pr_base_black1
+{
+  background:#2D3032;
+}
+
+.popup-bg
+{
+    left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  background: rgba(24, 24, 24, 0.6);
+}

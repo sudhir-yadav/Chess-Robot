@@ -1,7 +1,8 @@
 *{padding:0;margin:0;}
 
-body,html{font-family:"Source Sans Pro";}
+body,html{font-family:"sans-serif";height:100%;width:100%;}
 
+/* few general background colours */
 .bg-color-orange{background: rgb(233, 147, 26);}
 .bg-color-orange-drk1{background: rgb(208, 101, 3);}
 .bg-color-lightblue{background: rgb(22, 145, 190);}
@@ -10,30 +11,67 @@ body,html{font-family:"Source Sans Pro";}
 .bg-color-blc-blu2{background: rgb(21, 40, 54);}
 .bg-color-blc-blu3{background:rgb(54, 73, 86);}
 
+/*init for no margin and padding */
+.mrgn0{margin:0px !important;}
+.pad0{padding:0px !important;}
 
-.color-white{color:#fff;}
+/*text color*/
+.color-wht{color:#fff;}
+.color-blk{color:#000;}
 
-.float_left{ flaot:left; }
-.float_right{ flaot:right; }
-.ele-center{margin:auto !important;}
+/*float element*/
+.flt_lft{ float:left !important; }
+.flt_rgt{ float:right !important; }
+.ele_cntr{margin:auto !important;}
 
+/*block types */
+.dsply_blk{display:block;}
+.dsply_inblk{display:inline-block;}
+
+/*element placement */
+.lft0{left:0px;}
+.rgt0{right:0px;}
+.btm0{bottom:0px;}
+.top0{top:0px;}
+
+/*element position type */
 .pos_rel{position:relative;}
 .pos_abs{position:absolute;}
 .pos_stc{position: static;}
 .pos_fxd{position: fixed;}
 
+/*text alignment*/
 .txt_center{text-align:center;}
 .txt_left{text-align:left;}
 .txt_right{text-align:right;}
 
-.area-lg-h,.area-lg-1,.area-lg-1h,.area-lg-2,.area-lg-2h,.area-lg-3,.area-lg-3h,.area-lg-4,.area-lg-4h,.area-lg-5,.area-lg-5h,.area-lg-6,.area-lg-6h,.area-lg-7,.area-lg-7h,.area-lg-8,.area-lg-8h,.area-lg-9,.area-lg-9h,.area-lg-10
+/*.area-lg-h,.area-lg-1,.area-lg-1h,.area-lg-2,.area-lg-2h,.area-lg-3,.area-lg-3h,.area-lg-4,.area-lg-4h,.area-lg-5,.area-lg-5h,.area-lg-6,.area-lg-6h,.area-lg-7,.area-lg-7h,.area-lg-8,.area-lg-8h,.area-lg-9,.area-lg-9h,.area-lg-10
 {position:relative;}
 .area-xs-h,.area-xs-1,.area-xs-1h,.area-xs-2,.area-xs-2h,.area-xs-3,.area-xs-3h,.area-xs-4,.area-xs-4h,.area-xs-5,.area-xs-5h,.area-xs-6,.area-xs-6h,.area-xs-7,.area-xs-7h,.area-xs-8,.area-xs-8h,.area-xs-9,.area-xs-9h,.area-xs-10
-{position:relative;}
+{position:relative;}*/
 
-.height_full{height:100%;}
 
-.border_r50{border-radius:50%;}
+/* to hide element according to screen size */
+.xs-hide{display: none;}
+.md-hide{display: none;}
+.lg-hide{display: none;}
+.xlg-hide{display: none;}
+
+
+.hgt_full{height:100%;}
+
+.bdr_r50{border-radius:50%;}
+.bdr0{border:0px;}
+
+/* generaly used text types for light and dark background */
+.lit_txt{color:rgba(255,255,255,0.5);}
+.drk_txt{color:rgba(0,0,0,0.5);}
+
+/* generally used for light/dark background */
+.lit_bg{background-color:rgba(255,255,255,0.5);}
+.drk_bg{background-color:rgba(0,0,0,0.5);}
+
+
 
 @media (min-width: 1200px) {
 .area-lg-h{width:5%;}
@@ -83,3 +121,55 @@ body,html{font-family:"Source Sans Pro";}
 .area-xs-10{width:100%;}
 
 }
+
+
+.area-ht-h{height:5%;}
+.area-ht-1{height:10%;}
+.area-ht-1h{height:15%;}
+.area-ht-2{height:20%;}
+.area-ht-2h{height:25%;}
+.area-ht-3{height:30%;}
+.area-ht-3h{height:35%;}
+.area-ht-4{height:40%;}
+.area-ht-4h{height:45%;}
+.area-ht-5{height:50%;}
+.area-ht-5h{height:55%;}
+.area-ht-6{height:60%;}
+.area-ht-6h{height:65%;}
+.area-ht-7{height:70%;}
+.area-ht-7h{height:75%;}
+.area-ht-8{height:80%;}
+.area-ht-8h{height:85%;}
+.area-ht-9{height:90%;}
+.area-ht-9h{height:95%;}
+.area-ht-10{height:100%;}
+
+
+
+.area-ht-px-h{height:50px;}
+.area-ht-px-1{height:100px;}
+.area-ht-px-1h{height:150px;}
+.area-ht-px-2{height:200px;}
+.area-ht-px-2h{height:250px;}
+.area-ht-px-3{height:300px;}
+.area-ht-px-3h{height:350px;}
+.area-ht-px-4{height:400px;}
+.area-ht-px-4h{height:450px;}
+.area-ht-px-5{height:500px;}
+.area-ht-px-5h{height:550px;}
+.area-ht-px-6{height:600px;}
+.area-ht-px-6h{height:650px;}
+.area-ht-px-7{height:700px;}
+.area-ht-px-7h{height:750px;}
+.area-ht-px-8{height:800px;}
+.area-ht-px-8h{height:850px;}
+.area-ht-px-9{height:900px;}
+.area-ht-px-9h{height:950px;}
+.area-ht-px-10{height:1000px;}
+.area-ht-px-10h{height:1050px;}
+.area-ht-px-11{height:1100px;}
+.area-ht-px-11h{height:1150px;}
+.area-ht-px-12{height:1200px;}
+.area-ht-px-12h{height:1250px;}
+.area-ht-px-13{height:1300px;}
+.area-ht-px-full{height:10000px;}

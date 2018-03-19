@@ -5,14 +5,9 @@
   <meta charset='utf-8'/>
 	<title>Chero</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-	<link href="css/utility.css" rel="stylesheet" type="text/css"/>
-    <!-- <link href="css/electura.css" rel="stylesheet" type="text/css"/> -->
-    <!-- <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/> -->
-    <!-- <link href="css/simple-line-icons.css" rel="stylesheet" type="text/css"/> -->
-   <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
     <link href="css/font.css" rel="stylesheet" type="text/css"/>
-   <link href="css/custom.css" rel="stylesheet" type="text/css"/> 
-	 -->
+	<link href="css/utility.css" rel="stylesheet" type="text/css"/>
+    <link href="css/chess.css" rel="stylesheet" type="text/css"/>
    <script  type="text/javascript" src='js/jquery-3.3.1.min.js'></script>
   <style type="text/css">
        td{
@@ -201,9 +196,94 @@
 </head>
 <body>
 
-  <div class="container" style="text-align:center;">
-      <h2 style="margin-bottom: 14px;">Automated Chess Board</h2>
-      <div style="float:left;width:68%;">
+    <div class="project_body">
+
+      <!-- <aside class="side_menu_bar pr_base_black1">
+
+
+          <div class="side_menu_bar_wrapper">
+                <a >
+                      <h1><i class="icon-speedometer"></i></h1>
+                      <small>Dashboard</small>
+                </a>
+                <a >
+                      <h1><i class="icon-note"></i></h1>
+                      <small>Form</small>
+                </a>
+                <a class="active">
+                      <h1><i class="icon-directions"></i></h1>
+                      <small>Home</small>
+                </a>
+                <a>
+                      <h1><i class="fa fa-cube"></i></h1>
+                      <small>Home</small>
+                </a>
+                <a>
+                      <h1><i class="icon-briefcase"></i></h1>
+                      <small>Home</small>
+                </a>
+                  <a>
+                      <h1><i class="icon-settings"></i></h1>
+                      <small>Home</small>
+                  </a>   
+            </div>
+        </aside> -->
+ 
+      <header class="nav_header pr_base_blue">
+          <span class='flt_lft' style="padding:0 15px 0 15px;display:inline-block;font-size:20px;">
+            <i class="fa fa-cube"></i> &nbsp; CHERO.COM
+          </span>
+      </header>
+    
+      <aside class="side_menu_bar pr_base_black1">
+
+
+            <!-- <div class="sbar_sub_menu" >
+              <div class="side_menu_bar_wrapper" style="padding-top:50px;">
+                      <span style="display: block; height: 30px; line-height: 30px; text-align: center; font-size: 18px; padding: 10px; /* border-bottom: 1px solid rgb(230, 225, 225); */ color: rgb(249, 254, 254); background: #68E34F;font-weight: 500;">
+                      <i class="icon-directions"></i>&nbsp;  HOME 
+                      </span>
+                      <ol class="sbar_submenu_list">
+                          <li><i class="icon-note"></i> &nbsp; Hello1  <i class="fa fa-angle-right pull-right"></i></li>
+                          <li class="active" style="background: #f5f5f5;"><i class="icon-note"></i> &nbsp; Hello2 <i class="fa fa-angle-right pull-right"></i></li>
+                          <li><i class="icon-note"></i> &nbsp; Hello <i class="fa fa-angle-right pull-right"></i></li>
+                          <li><i class="icon-note"></i> &nbsp; Hello <i class="fa fa-angle-right pull-right"></i></li>
+                      </ol>
+                </div>
+            </div> -->
+
+
+          <div class="side_menu_bar_wrapper">
+                <a >
+                      <h1><i class="icon-speedometer"></i></h1>
+                      <small>Dashboard</small>
+                </a>
+                <a >
+                      <h1><i class="icon-note"></i></h1>
+                      <small>Form</small>
+                </a>
+                <a class="active">
+                      <h1><i class="icon-directions"></i></h1>
+                      <small>Home</small>
+                </a>
+                <a>
+                      <h1><i class="fa fa-cube"></i></h1>
+                      <small>Home</small>
+                </a>
+                <a>
+                      <h1><i class="icon-briefcase"></i></h1>
+                      <small>Home</small>
+                </a>
+                  <a>
+                      <h1><i class="icon-settings"></i></h1>
+                      <small>Home</small>
+                  </a>   
+            </div>
+        </aside>
+
+      <section class="body_usable pad0 flt_lft" style="padding-left:0px;">
+
+        <div class="txt_center area-lg-8 flt_lft" style="margin-top:30px;float:left;">
             <table style="border:1px solid #dadada;margin:auto;">
                 <?php
                      for($i=8;$i>0;$i--)
@@ -221,20 +301,22 @@
                      }
                 ?>
             </table>
-          <button>Start</button>
-          <button>Reset</button>
-          <button>End</button>
-      </div>   
-      <div class="console">
-           <h1 style="text-align: center;color:#fff;"> Console </h1>
-           <hr style="margin:10px;border-bottom:none;" />
-           <?php echo "<pre>";
-              print_r($chess_pieces);
-             ?>
-      </div>
-   </div>
+        </div>
+        
+        
 
-   <script>   
+      </section>
+
+    </div>
+
+    <!-- <div class="popup-bg ele-cntr">
+      <div class="area-lg-3h  ele-cntr" style="background: #fff;height: 180px;margin-top: 10% !important;box-shadow: 5px 5px 40px 6px rgba(92, 91, 91, 0.16);border-radius: 2px;overflow: hidden;margin:auto;">
+          <span style="padding: 10px;display: block;background: rgba(83, 179, 239, 0.99);color: #fff;"> WARNING <i class=""></i> </span>
+      </div>
+    </div> -->
+ 
+
+     <script>   
    //  var m = "<div class='chess_pieces' draggable='true'>Pi</div>";
      var chess_pieces = <?php echo json_encode($chess_pieces); ?>;
      var rules = <?php echo json_encode($rules); ?>;
@@ -351,7 +433,7 @@
 
         // breaked if into multiple parts
         //if(getPieceMovement.d)
-        //console.log(piece_status.piece_type);
+        console.log(getPieceMovement);
         //console.log(same_team);
         
         if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 3 &&  (curr_present_ele == undefined ||  same_team)  )
@@ -387,7 +469,7 @@
           allow_mv = true;
         }
 
-       
+         
          
         if((allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir && !over_lay )
         {
@@ -401,6 +483,5 @@
    
 
 </script>
-
 </body>
 </html>

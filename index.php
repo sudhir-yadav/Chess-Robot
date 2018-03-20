@@ -235,55 +235,14 @@
           </span>
       </header>
     
-      <aside class="side_menu_bar pr_base_black1">
+      <aside class="light_bg flt_lft area-ht-10 area-lg-1h">
+      Hello
+      </aside>
 
+      
+      <section class="body_usable pad0 flt_lft area-lg-7" style="padding-top:50px !important;">
 
-            <!-- <div class="sbar_sub_menu" >
-              <div class="side_menu_bar_wrapper" style="padding-top:50px;">
-                      <span style="display: block; height: 30px; line-height: 30px; text-align: center; font-size: 18px; padding: 10px; /* border-bottom: 1px solid rgb(230, 225, 225); */ color: rgb(249, 254, 254); background: #68E34F;font-weight: 500;">
-                      <i class="icon-directions"></i>&nbsp;  HOME 
-                      </span>
-                      <ol class="sbar_submenu_list">
-                          <li><i class="icon-note"></i> &nbsp; Hello1  <i class="fa fa-angle-right pull-right"></i></li>
-                          <li class="active" style="background: #f5f5f5;"><i class="icon-note"></i> &nbsp; Hello2 <i class="fa fa-angle-right pull-right"></i></li>
-                          <li><i class="icon-note"></i> &nbsp; Hello <i class="fa fa-angle-right pull-right"></i></li>
-                          <li><i class="icon-note"></i> &nbsp; Hello <i class="fa fa-angle-right pull-right"></i></li>
-                      </ol>
-                </div>
-            </div> -->
-
-
-          <div class="side_menu_bar_wrapper">
-                <a >
-                      <h1><i class="icon-speedometer"></i></h1>
-                      <small>Dashboard</small>
-                </a>
-                <a >
-                      <h1><i class="icon-note"></i></h1>
-                      <small>Form</small>
-                </a>
-                <a class="active">
-                      <h1><i class="icon-directions"></i></h1>
-                      <small>Home</small>
-                </a>
-                <a>
-                      <h1><i class="fa fa-cube"></i></h1>
-                      <small>Home</small>
-                </a>
-                <a>
-                      <h1><i class="icon-briefcase"></i></h1>
-                      <small>Home</small>
-                </a>
-                  <a>
-                      <h1><i class="icon-settings"></i></h1>
-                      <small>Home</small>
-                  </a>   
-            </div>
-        </aside>
-
-      <section class="body_usable pad0 flt_lft" style="padding-left:0px;">
-
-        <div class="txt_center area-lg-8 flt_lft" style="margin-top:30px;float:left;">
+        <div class="txt_center area-lg-10 flt_lft area-lg-10" style="margin-top:30px;">
             <table style="border:1px solid #dadada;margin:auto;">
                 <?php
                      for($i=8;$i>0;$i--)
@@ -303,17 +262,18 @@
             </table>
         </div>
         
-        
-
       </section>
+
+      <aside class="light_bg flt_lft area-ht-10 area-lg-1h" style="margin-left:-2px;">
+          Hello world 
+      </aside>
+
+
+
 
     </div>
 
-    <!-- <div class="popup-bg ele-cntr">
-      <div class="area-lg-3h  ele-cntr" style="background: #fff;height: 180px;margin-top: 10% !important;box-shadow: 5px 5px 40px 6px rgba(92, 91, 91, 0.16);border-radius: 2px;overflow: hidden;margin:auto;">
-          <span style="padding: 10px;display: block;background: rgba(83, 179, 239, 0.99);color: #fff;"> WARNING <i class=""></i> </span>
-      </div>
-    </div> -->
+
  
 
      <script>   
@@ -393,7 +353,7 @@
       {
         var i_diff = piece_status.curr_pos[1] - piece_status.last_pos[1];
         var j_diff = Math.abs(piece_status.curr_pos[0] - piece_status.last_pos[0]);
-        var movement,direction,step_count;
+        var movement,direction,step_count,jump = false;
         
         step_count = Math.abs(i_diff)+j_diff ;
         // [direction]->[1->vertical],[2->horizontal],[3->diagonal],[4->vertical_horizontal],[5->vertical_diagonal][6->l_movement][7->all]
@@ -406,12 +366,55 @@
         if(piece_status.piece_team === "0"){ (i_diff > 0) ? movement = 1 : movement = 2; }//team white
         else{ (i_diff < 0) ? movement = 1 : movement = 2; }//team black
 
-        var pieceMoveStatus = {'direction':direction,'movement':movement,'total_step':step_count};
+       // vertical _jump 
+         if(direction == 1 || direction ==2){
+             var arr_ele_pos
+            if(direction == 1){ arr_ele_pos = 1 }else{ arr_ele_pos = 0 }
+            var start,end;
+
+            if((piece_status.last_pos[arr_ele_pos] < piece_status.curr_pos[arr_ele_pos]))
+            {start = piece_status.last_pos[arr_ele_pos];end = piece_status.curr_pos[arr_ele_pos];} // white to black  - vforward
+            else if((piece_status.last_pos[arr_ele_pos] > piece_status.curr_pos[arr_ele_pos]))
+            {end = piece_status.last_pos[arr_ele_pos];start = piece_status.curr_pos[arr_ele_pos];} // black to white  - vbackward
+
+            for(var i=start+1;i<end;i++)
+            {  
+               // console.log(i); 
+                var sub = 0
+                 if(direction == 2){var path_ele = document.getElementById(String.fromCharCode((65-sub) + i)+piece_status.curr_pos[1]).childNodes[0];}
+                 else{var path_ele = document.getElementById(String.fromCharCode(65 + piece_status.curr_pos[0])+i).childNodes[0]; }
+    
+                if(path_ele != undefined){jump = true;break;}
+            }
+         }else if( direction == 3) // diagonal jump
+         {
+            var start1,end1,start2,end2; 
+
+             if(piece_status.last_pos[0] < piece_status.curr_pos[0]){ start1 = piece_status.last_pos[0]; end1 =  piece_status.curr_pos[0]; } // white down -right - diagonal 
+             else{ end1 = piece_status.last_pos[0]; start1 =  piece_status.curr_pos[0]; }
+
+             if(piece_status.last_pos[1] > piece_status.curr_pos[1] ){ start2 = piece_status.last_pos[1]; end2 =  piece_status.curr_pos[1]; } // white down -right - diagonal 
+             else{ end2 = piece_status.last_pos[1]; start2 =  piece_status.curr_pos[1]; }
+
+             for(var i=start1+1;i<end1;i++)
+             {
+                while((j = start2-1) > end2)
+                {
+                  var path_ele = document.getElementById(String.fromCharCode(65 + i)+j).childNodes[0];
+                  start2--;
+                  break;
+                }  
+               if(path_ele != undefined){jump = true;break;}           
+             }
+         }else if(direction == 6){jump = true;}else{ jump = false; }
+
+        var pieceMoveStatus = {'direction':direction,'movement':movement,'total_step':step_count,'jump':jump};
         return pieceMoveStatus;
       } // forward  , backward 
       
       function checkRules(piece_status,getPieceMovement)
       {
+         console.log(rules[piece_status.piece_type]);
          var allow_mv = false,allow_dir = false,allwd_step = 0;
          (piece_status.init_pos == piece_status.last_pos_b) ? allwd_step = rules[piece_status.piece_type].init_step : allwd_step = rules[piece_status.piece_type].step; 
         
@@ -433,7 +436,7 @@
 
         // breaked if into multiple parts
         //if(getPieceMovement.d)
-        console.log(getPieceMovement);
+        // console.log(getPieceMovement);
         //console.log(same_team);
         
         if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 3 &&  (curr_present_ele == undefined ||  same_team)  )
@@ -443,6 +446,10 @@
         else if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 1 &&  !same_team )
          {
              allow_dir = false;
+         }
+         else if(rules[piece_status.piece_type].jump == "0" && getPieceMovement.jump == true )
+         {
+            allow_dir = false;
          }
         else if(( rules[piece_status.piece_type].direction == getPieceMovement.direction || (rules[piece_status.piece_type].direction == 7) &&  getPieceMovement.direction != 6))
         {

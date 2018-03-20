@@ -249,3 +249,9 @@ box-shadow:0 0 15px rgba(0,0,0,0.1);
   width: 100%;
   background: rgba(24, 24, 24, 0.6);
 }
+
+.light_bg{
+  background:#fff;color:#dadada;
+  border-right: 1px solid #DADADA;
+  box-shadow: 0px 8px 30px -6px rgba(0, 0, 0, 0.065);
+}

@@ -414,7 +414,7 @@
       
       function checkRules(piece_status,getPieceMovement)
       {
-         console.log(rules[piece_status.piece_type]);
+         console.log(getPieceMovement);
          var allow_mv = false,allow_dir = false,allwd_step = 0;
          (piece_status.init_pos == piece_status.last_pos_b) ? allwd_step = rules[piece_status.piece_type].init_step : allwd_step = rules[piece_status.piece_type].step; 
         
@@ -439,17 +439,17 @@
         // console.log(getPieceMovement);
         //console.log(same_team);
         
-        if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 3 &&  (curr_present_ele == undefined ||  same_team)  )
+        if(rules[piece_status.piece_type].jump == "0" && getPieceMovement.jump == true )
+         {
+            allow_dir = false;
+         }
+         else if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 3 &&  (curr_present_ele == undefined ||  same_team)  )
         {
             allow_dir = false;
         }
         else if(piece_status.piece_type == "pawn" && getPieceMovement.direction == 1 &&  !same_team )
          {
              allow_dir = false;
-         }
-         else if(rules[piece_status.piece_type].jump == "0" && getPieceMovement.jump == true )
-         {
-            allow_dir = false;
          }
         else if(( rules[piece_status.piece_type].direction == getPieceMovement.direction || (rules[piece_status.piece_type].direction == 7) &&  getPieceMovement.direction != 6))
         {
@@ -465,7 +465,8 @@
         }
         else if( (rules[piece_status.piece_type].direction == 5) && (getPieceMovement.direction == 1 ||  getPieceMovement.direction == 3) ){
             allow_dir = true;
-        }else
+        }
+         else
         {
             allow_dir = false;
         }

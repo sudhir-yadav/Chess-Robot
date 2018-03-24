@@ -198,7 +198,7 @@
 
     <div class="project_body">
 
-      <aside class="side_menu_bar pr_base_black1">
+      <!-- <aside class="side_menu_bar pr_base_black1">
 
 
           <div class="side_menu_bar_wrapper">
@@ -227,7 +227,9 @@
                       <small>Home</small>
                   </a>   
             </div>
-        </aside>
+
+           
+        </aside> -->
  
       <header class="nav_header pr_base_blue">
           <span class='flt_lft' style="padding:0 15px 0 15px;display:inline-block;font-size:20px;">
@@ -236,7 +238,11 @@
       </header>
     
       <aside class="light_bg flt_lft area-ht-10 area-lg-1h">
-      Hello
+      <div id="temp_white" class="area-lg-10 flt_rgt txt_center" style="height:100%;border-left:1px solid #dadada;padding-top:50px;">
+            
+           
+      </div>
+       
       </aside>
 
       
@@ -265,7 +271,8 @@
       </section>
 
       <aside class="light_bg flt_lft area-ht-10 area-lg-1h" style="margin-left:-2px;">
-          Hello world 
+      <div id="temp_black" class="area-lg-10 flt_rgt txt_center" style="height:100%;padding-top:50px;">
+          
       </aside>
 
 
@@ -361,15 +368,34 @@
           //  console.log(outPieceId.charAt(0));
             var response1 = outPieceId.substring(1)-1;
             console.log(outPieceId);
-            black_out.push(chess_pieces[outPieceTeam][response1]);
+            console.log(outPieceTeam);
+            if(outPieceTeam == "1"){ black_out.push(chess_pieces[outPieceTeam][response1]); }
+            else{ white_out.push(chess_pieces[outPieceTeam][response1]); }
+            
             chess_pieces[outPieceTeam].splice(response1,1); // remove one element
-            console.log(chess_pieces,black_out);
-          //  console.log(outPieceId);
-          //  console.log(piece_drop_pos.childNodes[0]);
+          //  console.log(chess_pieces,black_out,white_out);
+           //  console.log(outPieceId);
+           // console.log(piece_drop_pos.childNodes[0]);
             piece_drop_pos.removeChild(piece_drop_pos.childNodes[0]);
+            showOutPiece();
            // console.log(black_out);
         }
         piece_drop_pos.appendChild(chess_piece);
+      }
+
+      function showOutPiece()
+      {
+          console.log(black_out,white_out);
+          $('#temp_black').html("");
+          $('#temp_white').html("");
+          for(var i=0;i<black_out.length;i++)
+          {
+            $('#temp_black').append("<span class='out_piece_block piece_black' >"+black_out[i]['uni_code']+"</span>");
+          }
+          for(var i=0;i<white_out.length;i++)
+          {
+            $('#temp_white').append("<span class='out_piece_block piece_white' >"+white_out[i]['uni_code']+"</span>");
+          }
       }
 
       function getPieceMovement(piece_status)

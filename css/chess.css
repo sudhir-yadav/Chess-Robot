@@ -255,3 +255,16 @@ box-shadow:0 0 15px rgba(0,0,0,0.1);
   border-right: 1px solid #DADADA;
   box-shadow: 0px 8px 30px -6px rgba(0, 0, 0, 0.065);
 }
+
+.out_piece_block{
+  display: inline-block;
+  padding: 10px;
+  font-size: 45px;
+  float: left;
+  border: 1px solid #dadada;
+  margin: 5px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 2px;
+}

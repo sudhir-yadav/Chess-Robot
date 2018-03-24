@@ -198,7 +198,7 @@
 
     <div class="project_body">
 
-      <!-- <aside class="side_menu_bar pr_base_black1">
+      <aside class="side_menu_bar pr_base_black1">
 
 
           <div class="side_menu_bar_wrapper">
@@ -227,7 +227,7 @@
                       <small>Home</small>
                   </a>   
             </div>
-        </aside> -->
+        </aside>
  
       <header class="nav_header pr_base_blue">
           <span class='flt_lft' style="padding:0 15px 0 15px;display:inline-block;font-size:20px;">
@@ -280,6 +280,8 @@
    //  var m = "<div class='chess_pieces' draggable='true'>Pi</div>";
      var chess_pieces = <?php echo json_encode($chess_pieces); ?>;
      var rules = <?php echo json_encode($rules); ?>;
+     var black_out =  new Array()
+     var white_out = new Array();
     // console.log("chess_pieces",chess_pieces);
     // console.log("rules",rules);
      place_pieces();
@@ -296,22 +298,21 @@
             }
          }
      }
-
-   </script>
-   <script>
+     
       function allowDrop(ev) 
       {
           ev.preventDefault();
-          $(".active_drag_point").removeClass('active_drag_point');
-          $("#"+ev.target.id).addClass('active_drag_point');
+         // $(".active_drag_point").removeClass('active_drag_point');
+        //  $("#"+ev.target.id).addClass('active_drag_point');
       }
+      
       function drag(ev) 
       {
           ev.dataTransfer.setData("chess_piece_id", ev.target.id);
           var drag_piece_id = document.getElementById(ev.target.id);
           ev.dataTransfer.setData("piece_from",drag_piece_id.parentNode.id);
           ev.dataTransfer.setData("piece_from_data",drag_piece_id.parentNode.getAttribute("data-value")); 
-          $(".active_drag_point").removeClass('active_drag_point');
+        //  $(".active_drag_point").removeClass('active_drag_point');
       }
       function drop(ev) 
       {
@@ -342,11 +343,33 @@
              //console.log(getPieceMovement(piece_status));
              if(checkRules(piece_status,getPieceMovement(piece_status)))
              {
-                piece_drop_pos.appendChild(chess_piece,piece_team,piece_type);
+               // piece_drop_pos.appendChild(chess_piece,piece_team,piece_type);
+               //console.log(chess_pieces);
+               movePieces(piece_drop_pos,chess_piece,piece_status);
              }
 
           }  
-          $(".active_drag_point").removeClass('active_drag_point');
+         // $(".active_drag_point").removeClass('active_drag_point');
+      }
+
+      function movePieces(piece_drop_pos,chess_piece,piece_status)
+      {
+        if(piece_drop_pos.childNodes[0] != undefined)
+        {
+            var outPieceTeam = piece_drop_pos.childNodes[0].getAttribute('piece_team'); // 
+            var outPieceId = piece_drop_pos.childNodes[0].getAttribute('id'); // 
+          //  console.log(outPieceId.charAt(0));
+            var response1 = outPieceId.substring(1)-1;
+            console.log(outPieceId);
+            black_out.push(chess_pieces[outPieceTeam][response1]);
+            chess_pieces[outPieceTeam].splice(response1,1); // remove one element
+            console.log(chess_pieces,black_out);
+          //  console.log(outPieceId);
+          //  console.log(piece_drop_pos.childNodes[0]);
+            piece_drop_pos.removeChild(piece_drop_pos.childNodes[0]);
+           // console.log(black_out);
+        }
+        piece_drop_pos.appendChild(chess_piece);
       }
 
       function getPieceMovement(piece_status)
@@ -414,7 +437,7 @@
       
       function checkRules(piece_status,getPieceMovement)
       {
-         console.log(getPieceMovement);
+         //console.log(getPieceMovement);
          var allow_mv = false,allow_dir = false,allwd_step = 0;
          (piece_status.init_pos == piece_status.last_pos_b) ? allwd_step = rules[piece_status.piece_type].init_step : allwd_step = rules[piece_status.piece_type].step; 
         
@@ -476,15 +499,15 @@
         {
           allow_mv = true;
         }
-
-         
-         
+    
         if((allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir && !over_lay )
         {
             return true;
         }else{
             return false;
         }
+
+
          
       }
 

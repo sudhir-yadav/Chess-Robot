@@ -1,0 +1,5 @@
+[movement]-> [1->forward],[2->backward],[3->both]
+[direction]->[1->vertical],[2->horizontal],[3->diagonal],[4->vertical_horizontal],[5->vertical_diagonal][6->l_movement][7->all]
+[team]->[0->white],[1->black]
+[step]->[a->infinity],[{num}->num_count]
+[jump]->[0->false][1->true]

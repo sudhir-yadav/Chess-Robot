@@ -16,7 +16,7 @@
     <link href="css/app.css" rel="stylesheet" type="text/css"/>
     
     <!-- Script -->
-    <script  type="text/javascript" src='js/jquery-3.3.1.min.js'></script>
+    <!-- <script  type="text/javascript" src='js/jquery-3.3.1.min.js'></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 
 </head>
@@ -33,14 +33,12 @@
     
       <aside class="light_bg flt_lft area-ht-10 area-lg-1h">
             <div id="temp_white" class="area-lg-10 flt_rgt txt_center" style="height:100%;border-left:1px solid #dadada;padding-top:50px;">
-                    
-                
             </div>
       </aside> <!-- left sidebar -->
   
       <section class="body_usable pad0 flt_lft area-lg-7" style="padding-top:50px !important;">
          <div id="drawTable" class="txt_center area-lg-10 flt_lft area-lg-10" style="margin-top:30px;">
-         </div> 
+         </div><!-- chess Section --> 
       </section><!-- content -->
 
       <aside class="light_bg flt_lft area-ht-10 area-lg-1h" style="margin-left:-2px;">
@@ -51,7 +49,7 @@
     </div>
 
     <!-- Footer Script -->
-    <!-- <script> var socket = io('http://localhost:8000'); </script> -->
+    <script> var socket = io('http://localhost:8000'); </script>
     <script src="js/chess.js"></script>
     
 </body>

@@ -9,12 +9,13 @@
       var white_out = new Array();
       var lock = 0 ;
 
-      makeBoard();    // step 1
-      place_pieces(); // step 2
+      makeBoard();    // step 1: Create Chess Board
+      place_pieces(); // step 2: Place pieces on Board
+     // rotateBoard()
 
       function makeBoard()
       {
-        var table = "<table style='border:1px solid #dadada;margin:auto;' >";
+        var table = "<table id='chess_board' style='border:1px solid #dadada;margin:auto;' >";
         for(var i=8;i>0;i--)
         {
         table += "<tr>";
@@ -24,7 +25,7 @@
             var pieces_blk = "";
         
             if((j%2 && i%2) || (j%2 == 0 && i%2 == 0 )){ clss = 'white_bg'; }
-            table += "<td  class='"+clss+"'><span class='box_label'>"+(String.fromCharCode(65+j))+i+"</span> <div class='placement_block' ondrop='drop(event)' ondragover='allowDrop(event)' data-value='["+j+","+i+"]'  id='"+(String.fromCharCode(65+j))+i+"'></div> </td>";
+            table += "<td  class='"+clss+"'><span class='box_label top_left5'>"+(String.fromCharCode(65+j))+i+"</span> <div class='placement_block' ondrop='drop(event)' ondragover='allowDrop(event)' data-value='["+j+","+i+"]'  id='"+(String.fromCharCode(65+j))+i+"'></div> </td>";
             }
         table += "</tr>";
         }
@@ -43,6 +44,19 @@
                document.getElementById(chess_pieces[i][j]['cur_pos']).innerHTML =  "<span piece_team='"+i+"' init_pos='"+chess_pieces[i][j]['init_pos']+"'  piece_type='"+chess_pieces[i][j]['type']+"' id='"+chess_pieces[i][j]['id']+"' class='chess_pieces "+piece_color+"' draggable='true' ondragstart='drag(event)' >"+chess_pieces[i][j]['uni_code']+"</span>";
             }
          }
+      }
+
+      function rotateBoard()
+      {
+        document.getElementById('chess_board').classList.add("rotate180");
+        var all_ele_blc = document.getElementsByClassName('placement_block');
+        for(var i = 0;i<all_ele_blc.length ;i++)
+        {
+            document.getElementsByClassName('placement_block')[i].classList.add("rotate180");  
+            var temp_dv_sp =  document.getElementsByClassName('box_label')[i];
+            temp_dv_sp.classList.remove('top_left5');
+            temp_dv_sp.classList.add("rotate180",'bottom_right5');
+        }
       }
 
       function allowDrop(ev) 

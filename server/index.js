@@ -1,5 +1,6 @@
 const config    = require('./config'); 
-const express   = require('express');  
+const express   = require('express'); 
+const appRouter = express.Router(); 
 const app       = express();  
 const Appserver = require('http').createServer(app);  
 const ioServer  = require('socket.io')(Appserver);
@@ -14,10 +15,7 @@ ioServer.on('connection', function (socket) {
      // When socket disconnects, remove it from the list:
           socket.on('disconnect', function() {
               const index = clients.indexOf(socket);
-              if (index != -1) {
-                  clients.splice(index, 1);
-                  console.info('Client gone (id=' + socket.id + ').');
-              }
+              if (index != -1) {clients.splice(index, 1);console.info('Client gone (id=' + socket.id + ').');}
           });
           socket.on('message-from-client', (msg)=>{
               const index = clients.indexOf(socket);

@@ -11,7 +11,7 @@
 
       makeBoard();    // step 1: Create Chess Board
       place_pieces(); // step 2: Place pieces on Board
-     // rotateBoard()
+   // rotateBoard()   // Only if black as first player 
 
       function makeBoard()
       {
@@ -130,7 +130,7 @@
                    // console.log(chess_pieces[outPieceTeam][i]['id']);
                     if(outPieceTeam == "1"){ black_out.push(chess_pieces[outPieceTeam][i]); }
                     else {  white_out.push(chess_pieces[outPieceTeam][i]); }
-                    chess_pieces[outPieceTeam].splice(i,1);
+                   // chess_pieces[outPieceTeam].splice(i,1); // No need , as this would be used at the time of update
                 }
             }
 
@@ -295,4 +295,4 @@
 
 
          
-      }
+      } 

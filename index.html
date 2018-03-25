@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset='utf-8'/>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    
+    <title>Chero</title>
+
+    <!-- Stylesheet -->
+    <link href="css/font.css" rel="stylesheet" type="text/css"/>
+	<link href="css/utility.css" rel="stylesheet" type="text/css"/>
+    <link href="css/chess.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Script -->
+    <script  type="text/javascript" src='js/jquery-3.3.1.min.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+</head>
+
+<body>
+
+    <div class="project_body">
+
+      <header class="nav_header pr_base_blue">
+          <span class='flt_lft' style="padding:0 15px 0 15px;display:inline-block;font-size:20px;">
+            <i class="fa fa-cube"></i> &nbsp; CHERO.COM
+          </span>
+      </header> <!--navbar -->
+    
+      <aside class="light_bg flt_lft area-ht-10 area-lg-1h">
+            <div id="temp_white" class="area-lg-10 flt_rgt txt_center" style="height:100%;border-left:1px solid #dadada;padding-top:50px;">
+                    
+                
+            </div>
+      </aside> <!-- left sidebar -->
+  
+      <section class="body_usable pad0 flt_lft area-lg-7" style="padding-top:50px !important;">
+         <div id="drawTable" class="txt_center area-lg-10 flt_lft area-lg-10" style="margin-top:30px;">
+         </div> 
+      </section><!-- content -->
+
+      <aside class="light_bg flt_lft area-ht-10 area-lg-1h" style="margin-left:-2px;">
+          <div id="temp_black" class="area-lg-10 flt_rgt txt_center" style="height:100%;padding-top:50px;">
+          </div> 
+      </aside> <!-- right sidebar -->
+
+    </div>
+
+    <!-- Footer Script -->
+    <!-- <script> var socket = io('http://localhost:8000'); </script> -->
+    <script src="js/chess.js"></script>
+    
+</body>
+
+</html>

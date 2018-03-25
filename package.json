@@ -1,0 +1,26 @@
+{
+  "name": "chess-robot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.0",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudhir-yadav/chess-robot.git"
+  },
+  "author": "Sudhir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudhir-yadav/chess-robot/issues"
+  },
+  "homepage": "https://github.com/sudhir-yadav/chess-robot#readme"
+}

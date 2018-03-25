@@ -9,9 +9,8 @@
       var white_out = new Array();
       var lock = 0 ;
 
-      makeBoard();
-      place_pieces();
-
+      makeBoard();    // step 1
+      place_pieces(); // step 2
 
       function makeBoard()
       {
@@ -30,7 +29,7 @@
         table += "</tr>";
         }
         table += "</table>";
-        getElementById("drawTable").innerHTML = table;
+        document.getElementById("drawTable").innerHTML = table;
       }
 
       function place_pieces()
@@ -131,16 +130,16 @@
 
       function showOutPiece()
       {
-          console.log(black_out,white_out);
-          document.getElementById(temp_black).innerHTML = "";
-          document.getElementById(temp_black).innerHTML = "";
+          document.getElementById('temp_black').innerHTML = "";
+          document.getElementById('temp_white').innerHTML = "";
+
           for(var i=0;i<black_out.length;i++)
           {
-            document.getElementById(temp_black).appendChild("<span class='out_piece_block piece_black' >"+black_out[i]['uni_code']+"</span>");
+            document.getElementById('temp_black').innerHTML = "<span class='out_piece_block piece_black' >"+black_out[i]['uni_code']+"</span>";
           }
           for(var i=0;i<white_out.length;i++)
           {
-            document.getElementById(temp_white).appendChild("<span class='out_piece_block piece_white' >"+white_out[i]['uni_code']+"</span>");
+            document.getElementById('temp_white').innerHTML = "<span class='out_piece_block piece_white' >"+white_out[i]['uni_code']+"</span>";
           }
       }
       

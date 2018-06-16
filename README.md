@@ -6,6 +6,9 @@ Project is still under construction and only web part is currently shared as an 
 ### Project Glimpse
 ![chess-coin-properties-individual-img](https://sudhir-yadav.github.io/chess-robot/document/Selection_051.png)
 
+### In General
+A general chess board consist of 64 square labeled from A1 to H8.So the movement on the board can also be addressed via square name. [For example a chess coin pawn moves one step horizontally from A2 -> A3] . Chess board consist of 6 different types of coins which are pawn,knight,queen,bishop,king and rook. Each of these coin move differently in same / different directions. These chess coin moves in 3 major directions which are horizontal,vertical and diagonal.There is one extra derived move named as L movement for our reference (i.e of knight which moves 2 and half step).
+
 ### Setup 
 Yet to be written .
 

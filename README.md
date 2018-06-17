@@ -1,5 +1,5 @@
 # CHESS ROBOT
-
+![chess-coin-properties-individual-img](https://sudhir-yadav.github.io/chess-robot/document/chero64.png)
 ### About Project
 Started as a college project. `CHESS ROBOT ` is an IOT project , which demonstrate interation between web interface and real mechanical devices.
 Project is still under construction and only web part is currently shared as an open source distribution.

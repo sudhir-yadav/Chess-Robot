@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img src="https://sudhir-yadav.github.io/Chess-Robot/document/chero64.png" alt="Chero Logo" >
+  <img src="https://sudhir-yadav.github.io/Chess-Robot/document/chero128.png" alt="Chero Logo" >
   <br/>
   CHESS ROBOT
 </h1>

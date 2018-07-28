@@ -1,9 +1,8 @@
-<h1 align="center"><br>
-  <img src="https://sudhir-yadav.github.io/Chess-Robot/document/chero64.png" alt="Front-End Performance Checklist" width="10">
+<h2 align="center"><br>
+  <img src="https://sudhir-yadav.github.io/Chess-Robot/document/chero64.png" alt="Front-End Performance Checklist" >
   <br/>
-    <br/>
   CHESS ROBOT
-  <br>
+  <br/>
 </h1>
 
 ### About Project

@@ -27,7 +27,7 @@ Game consist of 3 configuration array :
 
 #### Chess coin properties
 
-![chess-coin-properties-all-img](https://sudhir-yadav.github.io/chess-robot/document/array_coin_properties.png)
+![chess-coin-properties-all-img](https://sudhir-yadav.github.io/Chess-Robot/document/array_coin_properties.png)
 
 Above given array consist of two jagged array .Out of which array[0] is for white coins and array[1] is of black coin. Each of these array consist of 16 element that is array[0/1][0] to array[1/0][15] which represents 16 coins of each team. Each of these element consist of following properties of a coin.
 

@@ -1,9 +1,10 @@
-<h2 align="center"><br>
+<h2 align="center">
   <img src="https://sudhir-yadav.github.io/Chess-Robot/document/chero64.png" alt="Front-End Performance Checklist" >
   <br/>
   CHESS ROBOT
-  <br/>
 </h1>
+<p align="center">Automated Board Gaming</p>
+<br/>
 
 ### About Project
 Started as a college project. `CHESS ROBOT ` is an IOT project , which demonstrate interation between web interface and real mechanical devices.

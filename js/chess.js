@@ -282,11 +282,13 @@
           allow_mv = true;
         }
 
-        if(lock == 0 &&  piece_status.piece_team == 0 ){ lock = 1 ;lock_Status = true; }
-        else if(lock == 1 &&  piece_status.piece_team == 1 ){ lock = 0;lock_Status = true; }
-        else { lock_Status = false; }
+        if ( (allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir && !over_lay ) {
+            if(lock == 0 &&  piece_status.piece_team == 0 ){ lock = 1 ;lock_Status = true; }
+            else if(lock == 1 &&  piece_status.piece_team == 1 ){ lock = 0;lock_Status = true; }
+            else { lock_Status = false; }
+        }
     
-        if((allwd_step >= getPieceMovement.total_step || rules[piece_status.piece_type].step == "a") && allow_mv && allow_dir && !over_lay && lock_Status )
+        if( lock_Status )
         {
             return true;
         }else{

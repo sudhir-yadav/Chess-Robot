@@ -146,15 +146,19 @@
       {
           document.getElementById('temp_black').innerHTML = "";
           document.getElementById('temp_white').innerHTML = "";
+          var black_out_ele = "";
+          var white_out_ele = "";
 
           for(var i=0;i<black_out.length;i++)
           {
-            document.getElementById('temp_black').innerHTML = "<span class='out_piece_block piece_black' >"+black_out[i]['uni_code']+"</span>";
+             black_out_ele+= "<span class='out_piece_block piece_black' >"+black_out[i]['uni_code']+"</span>";
           }
+          document.getElementById('temp_black').innerHTML = black_out_ele;
           for(var i=0;i<white_out.length;i++)
           {
-            document.getElementById('temp_white').innerHTML = "<span class='out_piece_block piece_white' >"+white_out[i]['uni_code']+"</span>";
+            white_out_ele+= "<span class='out_piece_block piece_white' >"+white_out[i]['uni_code']+"</span>";
           }
+          document.getElementById('temp_white').innerHTML = white_out_ele;
       }
       
       function getPieceMovement(piece_status)

@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Automated chess board game",
   "dependencies": {
+    "@craco/craco": "^6.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -17,12 +18,15 @@
     "@storybook/addon-links": "^6.3.4",
     "@storybook/node-logger": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.4"
+    "@storybook/react": "^6.3.4",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "repository": {

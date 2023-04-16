@@ -7,13 +7,12 @@
 <br/>
 
 ### About Project
-Started as a college project. `CHESS ROBOT ` is an IOT project , which demonstrate interation between web interface and real mechanical devices.
-Project is still under construction and only web part is currently shared as an open source distribution.
+The CHESS ROBOT began as a college project and is an IOT project showcasing the integration between web interface and physical mechanical devices. While the project is still being developed, the web portion is currently available as an open-source distribution.
 ### Project Glimpse
 <p align="center"><img src="https://sudhir-yadav.github.io/Chess-Robot/document/demo.gif" alt="chess-coin-properties-individual-img" ></p>
 
 ### In General
-A general chess board consist of 64 square labeled from A1 to H8.So the movement on the board can also be addressed via square name. [For example a chess coin pawn moves one step horizontally from A2 -> A3] . Chess board consist of 6 different types of coins which are pawn,knight,queen,bishop,king and rook. Each of these coin move differently in same / different directions. These chess coin moves in 3 major directions which are horizontal,vertical and diagonal.There is one extra derived move named as L movement for our reference (i.e of knight which moves 2 and half step).
+A typical chess board comprises of 64 squares, labeled from A1 to H8. The movement of pieces on the board can be indicated by their corresponding square names. For instance, a pawn can move one step horizontally from A2 to A3. The chess board is made up of six different types of pieces: pawn, knight, queen, bishop, king, and rook. Each of these pieces moves differently, either in the same or in different directions. Their movements can be classified into three main categories: horizontal, vertical, and diagonal. Additionally, there is an extra move type called the L movement, which refers to the movement of the knight that involves two and a half steps.
 
 ### Setup 
 Yet to be written .
@@ -29,7 +28,7 @@ Game consist of 3 configuration array :
 
 ![chess-coin-properties-all-img](https://sudhir-yadav.github.io/Chess-Robot/document/array_coin_properties.png)
 
-Above given array consist of two jagged array .Out of which array[0] is for white coins and array[1] is of black coin. Each of these array consist of 16 element that is array[0/1][0] to array[1/0][15] which represents 16 coins of each team. Each of these element consist of following properties of a coin.
+The given array is comprised of two jagged arrays, where array[0] is for white pieces, and array[1] is for black pieces. Each of these arrays contains 16 elements, i.e., array[0/1][0] to array[1/0][15], representing the 16 pieces of each team. Each of these elements contains the properties of a piece as follows:
 
 ![chess-coin-properties-individual-img](https://sudhir-yadav.github.io/Chess-Robot/document/piece_coin_properties.png)
 

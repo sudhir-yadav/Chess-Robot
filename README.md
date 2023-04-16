@@ -40,16 +40,16 @@ The given array is comprised of two jagged arrays, where array[0] is for white p
 
 ##### How it works
 
-1) After chess moves from one square to another go to step 2
-2) Then drop () function makes an array name piece_status and moves to step 3
-
+1) Move the piece from one square to another.
+2) Proceed to step 2.
+3) The drop() function creates an array called piece_status and proceeds to step 3 to set the prop-img.
 ![setting-prop-img](https://sudhir-yadav.github.io/Chess-Robot/document/setting_prop.png)
+4) The piece_status array is passed as a parameter to the getMovement() function, which returns an array of possible chess movements. Proceed to step 4.
+5) The piece_status array and the output of the getMovement() function are passed as parameters to the checkRules() function. This function validates the rules and returns either true or false. If the returned parameter is true, proceed to step 5, else proceed to step 6. [checkRules(piece_status, getPieceMovement(piece_status))]
+6) If the returned parameter is true, move the chess piece to the destination using the movePieces() function, which takes two parameters as arguments. After the movement, proceed to step 7. [movePieces(piece_drop_pos, chess_piece, piece_status);]
+7) If the returned parameter is false, discard the move.
+8) The movePieces() function moves the pieces to the appropriate place and, if necessary, removes pieces from the game. If the pieces do not replace each other, proceed to step 9, else proceed to step 8.
+9) The showOutPiece() function is called, and the inactive pieces are displayed in a separate section. Proceed to step 9.
+10) The process ends.
 
-3) Piece_status is passed to getMovement() function which return an array of chess movement . Then go to step 4
-4) Piece_status adn and output of getMovement() function is passed as parameter to checkRules() function. Which returns true or false after validation of rules . If returned param is true then go to step 5 else goto step 6 [checkRules(piece_status,getPieceMovement(piece_status))]
-5) On true chess pieces is move to destination using  movePieces() function which takes 2 param as argument.after movement goto step 7.
-	[movePieces(piece_drop_pos,chess_piece,piece_status);]
-6) On false move is discarded.
-7) movePieces() moves pieces to appropriate place and if needed makes pieces out of the game .If pieces do not replace each other go to step 9 else go to step 8
-8) showOutPiece() is called and inactive pieces are shown in then seperate section . Then go to step 9
-9) End
+
